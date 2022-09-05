@@ -61,9 +61,10 @@ final surname = 'Bob'; // Without a type annotation
 final String nickname = 'Bobby'; // With a type annotation
 const String dogname = 'Jack'; // With a type annotation
 const Object i = 3; // Where i is a const Object with an int value...
-const list = [i as int]; // Use a typecast.
+const lists = [i as int]; // Use a typecast.
 const map = {if (i is int) i: 'int'}; // Use is and collection if.
-const set = {if (list is List<int>) ...list}; // ...and a spread.
+// ignore: unnecessary_type_check
+const set = {if (lists is List<int>) ...lists}; // ...and a spread.
 
 
 void main() {
@@ -73,7 +74,7 @@ void main() {
   print(lineCount);
   description = 'Feijoada!';
   print(i);
-  print(list);
+  print(lists);
   print(map);
   print(set);
 }
